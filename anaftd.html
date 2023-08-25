@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>After Design Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="./after.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>AFTER<br>Estudio de Diseño</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a> 
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Catalogo</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servicios</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quienes Somos?</a> 
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Consultorias</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a> 
+    <a href="#ubicacion" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ubicanos</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>After Studio</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- LOGOTIPO -->
+<center> 
+  <img src="./afterLogo.png" width="30%" Height="10%"></img>
+</center>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:20px" id="showcase">
+
+    <h1 class="w3-jumbo"><b>Diseño Industrial</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Catalogo.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) TODO REPLACE -->
+  <div class="w3-row-padding">
+    <div class="w3-third">
+<!-- Overlay effect when opening sidebar on small screens -->
+      <img src="./w3images/1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Esta caja de regalo incluye camiseta y cantina personalizados">
+      <img src="./w3images/2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bolsa estilo fashion personalizada">
+      <img src="./w3images/3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tarro de vidrio con diseño colorido reactivo a la temperatura">
+    </div>
+
+    <div class="w3-third">
+	    <img src="./w3images/1_alt.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Termo &quot;<i>Skinny </i>&quot;  y camiseta Personalizadas">
+      <img src="./w3images/2_alt.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      <img src="./w3images/3_alt.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Scandinavian design">
+    </div>
+
+   <div class="w3-third">
+      <img src="./w3images/1_alt2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Testing payaki">
+      <img src="./w3images/2_alt2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      <img src="./w3images/3_alt2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sc">
+      </div>   
+  
+
+
+
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click
+  <div id="modal02" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img02" class="w3-image">
+      <p id="alt_caption"></p>
+    </div>
+  </div-->
+
+  <!-- Services -->
+  <div class="w3-container" style="margin-top:75px">
+    <h1 id="services" class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Quienes Somos?.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>El mejor equipo de dise&ntilde;o, Fabricaci&oacute;n y Decoraci&oacute;n del mundo.</p>
+    <p>Somos los rem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut al equipo exodia commodo kuduro.
+    </p>
+    <p><b>Nuestros Dise&ntilde;adores son cuidadosamente elegidos</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="/w3images/team2.jpg" class="w3-hover-opacity" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>L.D.I Ana F. Ter&aacute;n Dominguez</h3>
+          <p class="w3-opacity">CEO &amp; Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--TEMPORAL EDIT commenting bellow >
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="./w3images/team1.jpg" class="w3-hover-opacity" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Jaime Duende</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div> uncomment soon -->
+
+
+
+
+    <!--is test bellow-->
+
+ <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="./w3images/team1.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Jaime duende</h1>
+      <p>Architect &amp; Engibeer</p>
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div> 
+
+    <!--is test above-->
+
+
+
+
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>L.S.C Miguel B.</h3>
+          <p class="w3-opacity">Diseñador Web</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Consultorias.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basica </li>
+	<li class="w3-padding-16"><i class="fa fa-clock-o" onhover="this.class='fa-regular fa-clock'" ></i>45 min por zoom  </li>
+        <li class="w3-padding-16">Renders fotorealistas </li>
+        <li class="w3-padding-16">Desglose de projecto</li>
+        <li class="w3-padding-16">10% de descuento en Fabricacion e Instalacion</li>
+        <li class="w3-padding-16"></li>
+        <li class="w3-padding-16">
+          <h2>$ 400</h2>
+          <span class="w3-opacity">por session</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Agendar</button>
+        </li>
+      </ul>
+    </div>
+        
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+	<li class="w3-padding-16"><i class="fa fa-clock-o"></i>1 H por Zoom o Presencial </li>
+        <li class="w3-padding-16">Renders fotorealistas</li>
+        <li class="w3-padding-16">Desgloce de proyecto</li>
+        <li class="w3-padding-16">30% discount</li>
+        <li class="w3-padding-16">GRAN OFERTA</li>
+        <li class="w3-padding-16">
+          <h2>$ 1250</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-red w3-padding-large w3-hover-black">Reserva Ahora!</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
+    <form action="/action_page.php" target="_blank">
+    <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <textarea class="w3-input w3-border" rows="4" cols="40" name="Message" required></textarea>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+    </form> 
+
+                           
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-center">Nos Ubicamos en:</p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Modal Image Gallery
+function onClicky(element) {
+  document.getElementById("img02").src = element.src;
+  document.getElementById("modal02").style.display = "block";
+  var captionText = document.getElementById("alt_caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+
+//	function onHover(element){
+		//element.src = 3_alt.jpg
+
+		//}
+</script>
+
+</body>
+<footer id="ubicacion">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d839.8318052181095!2d-115.47533183035313!3d32.65073542753414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d77a9fc8785185%3A0xbc39aadccc23ed6d!2sVilla%20del%20Colorado%20212%20A%20218%2C%20Villas%20Cachanillas%2C%2021150%20Mexicali%2C%20B.C.!5e0!3m2!1ses-419!2smx!4v1692968137920!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</footer>
+<div class="w3-light-grey">
+  <br />
+  <p class="w3-right"> AFTER 2023</p>
+
+</div>
+</html>
+
