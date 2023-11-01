@@ -15,9 +15,9 @@ html
 
 process pipeline is currently
 
-Cx contacts with request
-designer specs request with cx
-mockup + quote
-validate payment
-manufacturing pipeline
-delivery
+1. Cx contacts with request
+2. designer specs request with cx
+3. mockup + quote
+4. validate payment
+5. manufacturing pipeline
+6. Delivery
